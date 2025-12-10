@@ -18,18 +18,19 @@ small_icon_player = pygame.transform.scale(playerImg, (64,64))
 playerX = 350
 playerY = 480
 
-def player():
-    screen.blit(small_icon_player, (playerX, playerY))
+def player(x, y):
+    screen.blit(small_icon_player, (x, y))
 
 #Game loop
 running  = True
 while running:
     # RGB- Red, Green, Blue
     screen.fill((64, 224, 208))
+    playerY -= 0.1
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running =False
 
-    player()
+    player(playerX, playerY)
     pygame.display.update()
